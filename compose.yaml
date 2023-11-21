@@ -1,0 +1,34 @@
+services:
+  mongo:
+    image: mongo:latest
+    container_name: mongo_container
+    ports:
+      - "27017:27017"
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=esgi
+      - MONGO_INITDB_ROOT_PASSWORD=esgi
+
+  node:
+    build:
+      context: b-test
+      dockerfile: Dockerfile
+    container_name: node-express
+    env_file:
+      - b-test/.env
+    depends_on:
+      - mongo
+    ports:
+      - "3001:3001"
+
+  app:
+    build:
+      context: client
+      dockerfile: Dockerfile
+    container_name: app-front
+    #image: imagefront   # new image from modified container
+    #container_name: app-nextjs
+    ports:
+      - "3000:3000"
+
+
+
