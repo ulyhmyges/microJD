@@ -1,0 +1,21 @@
+name: Docker Image CI
+run-name: ${{ github.actor }} is learning how to build a docker image
+
+on:
+  push:
+    branches:
+      - 'main'
+
+jobs:
+
+  build-docker-image:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - run: TAG=$(date +%s)
+      - name: Build the Docker image
+        run: docker build . --file client/Dockerfile --tag "ulyhmyges/client:$TAG"
+      - name: Push on Docker Hub
+        run: docker push "ulyhmyges/client:$TAG"
