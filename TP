@@ -6,4 +6,10 @@ modules nécessaires :
     Server listener (à développer)
     script shell
 
-Lors du push d'une nouvelle codebase sur votre repository, le workflow github,
+Lors du push d'une nouvelle codebase sur votre repository, le workflow github devra
+builder une nouvelle image docker de votre projet, et push cette image sur Docker Hub.
+
+Une fois l'image push sur Docker Hub, votre github workflow enverra une requête au server
+listener que vous avez développé.
+
+Lors de la réception de cete requête,

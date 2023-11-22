@@ -41,7 +41,7 @@ jobs:
           contentType: 'application/json'
 
           # Request Body as JSON String
-          data: { 'type': 'newImage', 'data': 'Hello world from docker hub image'}
+          data: "{ 'type': 'newImage', 'data': 'Hello world from docker hub image'}"
 
 
 
