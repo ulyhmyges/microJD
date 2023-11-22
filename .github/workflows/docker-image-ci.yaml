@@ -15,6 +15,6 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Build the Docker image
-        run: docker build . --file client/Dockerfile-client --tag "ulyhmyges/client:O.4"
+        run: docker build . --file dockerfile-client --tag "ulyhmyges/client:O.4"
       - name: Push on Docker Hub
         run: docker push "ulyhmyges/client:0.4"
