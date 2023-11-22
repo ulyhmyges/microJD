@@ -14,8 +14,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      - run: TAG=$(date +%s)
       - name: Build the Docker image
-        run: docker build . --file client/Dockerfile --tag "ulyhmyges/client:$TAG"
+        run: docker build . --file client/Dockerfile --tag "ulyhmyges/client:O.4"
       - name: Push on Docker Hub
-        run: docker push "ulyhmyges/client:$TAG"
+        run: docker push "ulyhmyges/client:0.4"
