@@ -5,6 +5,7 @@ import {AccountController} from "./platforms/controllers";
 import {ExpressController} from "./definitions/controller";
 import {MongooseUtil} from "./platforms/utils";
 import mongoose, {Mongoose} from "mongoose";
+import {exec} from "child_process";
 
 
 config(); // load env vars
@@ -35,6 +36,36 @@ async function main() {
     app.get('/', (req: Request, res: Response) => {
         res.send("<h2>hello, I'm back</h2>");
     })
+
+
+    app.post('/events', express.json(), (req: Request, res: Response) => {
+       const {type, data} = req.body;
+        if (type==='newImage'){
+            const scriptPath = './script.sh';
+            exec(`bash ${scriptPath}`, (error, stdout, stderr) => {
+                if (error){
+                    console.error(`Error executing script: ${error.message}`);
+                    return;
+                }
+                console.log(`script output: ${stdout}`);
+                return res.send(stdout);
+            });
+        }
+        console.log('type: ', type);
+        if (type==='test'){
+            const scriptPath = './test.sh';
+            exec(`bash ${scriptPath}`, (error, stdout, stderr) => {
+                if (error){
+                    console.error(`Error executing script: ${error.message}`);
+                    return;
+                }
+                console.log(`script output: ${stdout}`);
+                return res.send(stdout);
+            });
+        }
+
+
+    });
     app.listen(process.env.PORT, () => console.log(`listen on port ${process.env.PORT}`))
 
     /*

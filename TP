@@ -1,0 +1,9 @@
+Développer un processus de CD :
+
+modules nécessaires :
+    Repo Github
+    Github Workflow (à implémenter)
+    Server listener (à développer)
+    script shell
+
+Lors du push d'une nouvelle codebase sur votre repository, le workflow github,

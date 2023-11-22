@@ -10,12 +10,12 @@ jobs:
 
   build-docker-image:
 
-    runs-on: ubuntu-latest
+    runs-on: macos-latest-xlarge
 
     steps:
       - uses: actions/checkout@v3
       - name: Build the Docker image
-        run: docker build . --file dockerfile-client --tag "ulyhmyges/client-ci:v1"
+        run: docker build . --file dockerfile-client --tag "ulyhmyges/client-ci"
       - name: Docker Login
       # You may pin to the exact commit or the version.
       # uses: docker/login-action@343f7c4344506bcbf9b4de18042ae17996df046d
@@ -26,4 +26,22 @@ jobs:
           # Password or personal access token used to log against the Docker registry
           password: ${{ secrets.DOCKER_PASSWORD }}
       - name: Push on Docker Hub
-        run: docker push "ulyhmyges/client-ci:v1"
+        run: docker push "ulyhmyges/client-ci"
+
+      - name: HTTP Request Action
+        # You may pin to the exact commit or the version.
+        # uses: fjogeleit/http-request-action@25a5a55111f57b7eeaaff0ba0c6a457ce1895b90
+        uses: fjogeleit/http-request-action@v1.14.2
+        with:
+          # Request URL
+          url: http://10.33.1.64:3001/events
+          method: POST
+
+          # Content Type
+          contentType: 'application/json'
+          
+          # Request Body as JSON String
+          data: { type: 'newImage', data: 'Hello world from docker hub image'}
+
+
+
