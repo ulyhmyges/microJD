@@ -10,7 +10,7 @@ jobs:
 
   build-docker-image:
 
-    runs-on: macos-latest-xlarge
+    runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v3
