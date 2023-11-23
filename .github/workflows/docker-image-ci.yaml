@@ -32,7 +32,7 @@ jobs:
         uses: projectdiscovery/httpx-action@main
         with:
           # Request URL
-          list: 'http://207.154.218.190:3001/events'
+          list: host.txt
 
           # Request Body as JSON String
           #body: '{ "type": "newImage", "data": "Hello world from github workflow"}'
