@@ -37,6 +37,3 @@ jobs:
           #headers: '{"Authentication": "Token ${{ env.TOKEN }}"}'
           #username: ${{ secrets.BASIC_AUTH_UN }}
           #password: ${{ secrets.BASIC_AUTH_PW }}
-
-          # Request Body as JSON String
-          #body: '{ "type": "newImage", "data": "Hello world from github workflow"}'
