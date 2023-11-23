@@ -30,9 +30,10 @@ jobs:
 
       - name: HTTP Request Action
         uses: projectdiscovery/httpx-action@main
+        run: httpx -request POST -H "Content-Type: application/json" -H -json
         with:
           # Request URL
-          target: 'http://207.154.218.190:3001/events'
+          list: 'http://207.154.218.190:3001/events'
           method: 'POST'
 
           # Content Type
