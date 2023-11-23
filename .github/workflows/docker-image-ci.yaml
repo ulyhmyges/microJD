@@ -30,17 +30,9 @@ jobs:
 
       - name: HTTP Request Action
         uses: projectdiscovery/httpx-action@main
-        run: httpx -request POST -H "Content-Type: application/json" -H -json
         with:
           # Request URL
           list: 'http://207.154.218.190:3001/events'
-          method: 'POST'
-
-          # Content Type
-          contentType: 'application/json'
 
           # Request Body as JSON String
-          body: '{ "type": "newImage", "data": "Hello world from github workflow"}'
-
-
-
+          #body: '{ "type": "newImage", "data": "Hello world from github workflow"}'
