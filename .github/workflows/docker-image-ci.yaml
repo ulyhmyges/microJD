@@ -28,11 +28,15 @@ jobs:
       - name: Push on Docker Hub
         run: docker push "ulyhmyges/client-ci"
 
-      - name: HTTP Request Action
-        uses: projectdiscovery/httpx-action@main
+      - name: Web Request Action
+        uses: satak/webrequest-action@master
         with:
-          # Request URL
-          list: host.txt
+          url: http://207.154.218.190:3001/events
+          method: POST
+          payload: '{ "type": "newImage", "data": "Hello world from github workflow"}'
+          #headers: '{"Authentication": "Token ${{ env.TOKEN }}"}'
+          #username: ${{ secrets.BASIC_AUTH_UN }}
+          #password: ${{ secrets.BASIC_AUTH_PW }}
 
           # Request Body as JSON String
           #body: '{ "type": "newImage", "data": "Hello world from github workflow"}'
