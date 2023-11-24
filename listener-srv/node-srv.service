@@ -1,0 +1,9 @@
+[Unit]
+Description="Node server - Mettre en service le server-listener"
+
+[Service]
+WorkingDirectory=/root/listener-srv
+ExecStart=scripts/npm-script.sh
+
+[Install]
+WantedBy=multi-user.target

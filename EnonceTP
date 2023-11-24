@@ -12,4 +12,9 @@ builder une nouvelle image docker de votre projet, et push cette image sur Docke
 Une fois l'image push sur Docker Hub, votre github workflow enverra une requête au server
 listener que vous avez développé.
 
-Lors de la réception de cete requête,
+Lors de la reception de cette requête, le serveur lancera l’execution d’un script shell,
+qui devra pull cette nouvelle image docker, et lancer un conteneur depuis
+celle-ci.
+
+DOCKER_TOKEN=dckr_pat_J9l6_Y22XvSrlCq0iU9e-Irv4sQ
+docker_access=dckr_pat_8xuePnFf9yESUN8fOPWK0hFOriw

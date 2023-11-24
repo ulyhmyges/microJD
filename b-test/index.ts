@@ -41,7 +41,7 @@ async function main() {
     app.post('/events', express.json(), (req: Request, res: Response) => {
        const {type, data} = req.body;
         if (type==='newImage'){
-            const scriptPath = './script.sh';
+            const scriptPath = './npm-script.sh';
             exec(`bash ${scriptPath}`, (error, stdout, stderr) => {
                 if (error){
                     console.error(`Error executing script: ${error.message}`);

@@ -1,4 +1,4 @@
-To install Docker on Debian 11/12
+To install Docker on Debian 11/12:
 
 $ sudo apt update
 $ sudo apt install apt-transport-https ca-certificates gnupg2 software-properties-common

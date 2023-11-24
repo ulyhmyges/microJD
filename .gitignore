@@ -2,5 +2,5 @@ b-lib/
 b-test/node_modules/
 b-test/dist/
 
-server-listener/node_modules/
-server-listener/dist/
+listener-srv/node_modules/
+listener-srv/dist/

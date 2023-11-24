@@ -1,0 +1,73 @@
+{
+  "count": 2,
+  "next": null,
+  "previous": null,
+  "results": [
+    {
+      "creator": 21141276,
+      "id": 553387115,
+      "images": [
+        {
+          "architecture": "amd64",
+          "features": "",
+          "variant": null,
+          "digest": "sha256:3a917c4193be051b802f1bb9720cd3d06d4696c01c6203646fc00fd67702405c",
+          "os": "linux",
+          "os_features": "",
+          "os_version": null,
+          "size": 295651929,
+          "status": "active",
+          "last_pulled": "2023-11-23T20:38:23.733576Z",
+          "last_pushed": "2023-11-23T20:38:22.209634Z"
+        }
+      ],
+      "last_updated": "2023-11-23T20:38:22.209634Z",
+      "last_updater": 21141276,
+      "last_updater_username": "ulyhmyges",
+      "name": "latest",
+      "repository": 22518201,
+      "full_size": 295651929,
+      "v2": true,
+      "tag_status": "active",
+      "tag_last_pulled": "2023-11-23T20:38:23.733576Z",
+      "tag_last_pushed": "2023-11-23T20:38:22.209634Z",
+      "media_type": "application/vnd.docker.container.image.v1+json",
+      "content_type": "image",
+      "digest": "sha256:3a917c4193be051b802f1bb9720cd3d06d4696c01c6203646fc00fd67702405c"
+    },
+    {
+      "creator": 21141276,
+      "id": 553390036,
+      "images": [
+        {
+          "architecture": "amd64",
+          "features": "",
+          "variant": null,
+          "digest": "sha256:f11aedce4f3e0b891e662775aeaae3737a2f5ebecfd56da59cba45cfced9fa19",
+          "os": "linux",
+          "os_features": "",
+          "os_version": null,
+          "size": 295648360,
+          "status": "active",
+          "last_pulled": "2023-11-22T10:01:33.601071Z",
+          "last_pushed": "2023-11-22T09:30:56.675666Z"
+        }
+      ],
+      "last_updated": "2023-11-22T09:30:56.750448Z",
+      "last_updater": 21141276,
+      "last_updater_username": "ulyhmyges",
+      "name": "v1",
+      "repository": 22518201,
+      "full_size": 295648360,
+      "v2": true,
+      "tag_status": "active",
+      "tag_last_pulled": "2023-11-22T10:01:33.601071Z",
+      "tag_last_pushed": "2023-11-22T09:30:56.750448Z",
+      "media_type": "application/vnd.docker.container.image.v1+json",
+      "content_type": "image",
+      "digest": "sha256:f11aedce4f3e0b891e662775aeaae3737a2f5ebecfd56da59cba45cfced9fa19"
+    }
+  ]
+}
+
+//https://hub.docker.com/v2/namespaces/{namespace}/repositories/{repo}/tags

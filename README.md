@@ -1,5 +1,6 @@
 # microJD
 
+### Inside of a same network Docker
 IP client (front): 192.168.240.2
 name container (front): client-c
 
@@ -18,4 +19,19 @@ inside container 'client-c':
 
     Request GET:
     curl http://192.168.240.4:3001/auth/accounts
+
+
+--------------------
+### Server listener
+
+Express project deployed on Digital Ocean server
+Config files in script directory to start Express project on the server
+
+Listening on port 3001.
+
+The server is waiting for event :
+- route '/events', method POST
+
+Then, the server execute scripts/script.sh
+And, starts a container of the client project named 'client-ci'
 
